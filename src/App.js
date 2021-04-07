@@ -5,10 +5,10 @@ import HoverNav from './components/HoverNav'
 import Recomended from './components/Recomended'
 import SearchResult from './components/SearchResult'
 import WatchScreen from './components/WatchScreen'
-import {BrowserRouter as Switch, Route, useHistory} from 'react-router-dom'
 import React, {useRef} from 'react'
 import LoginPage from './components/LoginPage'
 import { useSelector } from 'react-redux'
+import {Switch, Route, BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   const hoverNavRef = useRef() 
@@ -16,9 +16,10 @@ function App() {
   
   return (
     <>
-        {!accessToken ?  <LoginPage/> : 
-      <Switch>
-            <HoverNav ref={hoverNavRef} hoverNavRef={hoverNavRef} />
+      <Router basename="/youtube_clone">
+        <HoverNav ref={hoverNavRef} hoverNavRef={hoverNavRef} />
+      {!accessToken ? <LoginPage /> :
+        <Switch>
               <Route  path="/" exact>
                   <Header hoverNavRef={hoverNavRef}/>
                   <div id="cont" >
@@ -37,8 +38,9 @@ function App() {
                 <Header hoverNavRef={hoverNavRef}/>
                   <WatchScreen/>  
                 </Route>
-            </Switch>
+        </Switch>
         }
+        </Router>
   </>
     )
 }

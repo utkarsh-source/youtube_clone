@@ -4,14 +4,13 @@ import './index.css';
 import App from './App';
 import {Provider} from 'react-redux'
 import store from './store/store';
-import {BrowserRouter as Router} from 'react-router-dom'
+
 
 ReactDOM.render(
-    <Router basename='/youtube_clone'>
-      <Provider store={store}>
+  <Provider store={store}>
           <App />
       </Provider>
-    </Router>,
+   ,
   document.getElementById('root')
 );
 

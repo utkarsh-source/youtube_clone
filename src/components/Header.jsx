@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, useContext}from 'react'
-import { FaBars, FaYoutube, FaSearch, FaMicrophone, FaVideo, FaTh, FaBell} from 'react-icons/fa'
+import React, { useState, useRef}from 'react'
+import { FaBars, FaSearch, FaVideo, FaTh, FaBell} from 'react-icons/fa'
 import './header.css'
 import logo from './tube.png' 
 import { Link } from 'react-router-dom'
@@ -23,7 +23,7 @@ const Header = ({ hoverNavRef }) => {
     if (prevQuery != query) {
         setprevQuery(query)
         dispatch(getSearchVideos('','',true))
-        history.push(`/search${query}`)
+        history.push(`/search/${query}`)
         }
         
 }   
@@ -36,12 +36,8 @@ const Header = ({ hoverNavRef }) => {
             </div> 
             <div id="search-box">
                 <div className="mainbox">
-                    <input ref={inputElem} type="text" placeholder='Search' value={query} onChange={(e) => setQuery(e.target.value)}/>
-                    <Link onClick={submit} to={() => {
-                        if (query.length) {
-                           return `/search/${query}`
-                        }
-                    }} className='linkelem'>
+                    <input ref={inputElem} onKeyDown={(e)=> e.key==="Enter" && submit()} type="text" placeholder='Search' value={query} onChange={(e) => setQuery(e.target.value) }/>
+                    <Link  onClick={submit} to={''} className='linkelem'>
                         <FaSearch className="srch" />
                     </Link>
                 </div>
