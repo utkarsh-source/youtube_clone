@@ -1,0 +1,117 @@
+header {
+  width: 100%;
+  height: 6rem !important;
+  display: flex;
+  align-items: center;
+  background-color: #222222f8;
+  padding: 1.1rem 2.5rem;
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+header .bars {
+  font-size: 2rem;
+}
+header > #search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  min-width: 20rem;
+  height: 3.3rem;
+  margin-left: 1.5rem;
+  background-color: #0e0e0e;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+header .logo > h2 {
+  font-size: 1.6rem;
+}
+header .logo > h2 span {
+  font-size: 2.5rem;
+  color: greenyellow;
+}
+header .logo .bars {
+  margin-right: 2rem;
+}
+#search-box > .mainbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#search-box > .mainbox input {
+  font-family: Roboto !important;
+  width: 90%;
+  height: 100%;
+  border: none;
+  padding-left: 1rem;
+  background-color: transparent;
+  z-index: 2;
+  color: white;
+  border: 1px solid #383838;
+}
+#search-box > .mainbox > input::placeholder {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+#search-box > .mainbox > input:focus {
+  outline: 1px solid #1884ff;
+}
+#search-box > .mainbox .linkelem {
+  position: relative;
+  width: 10%;
+  min-width: 3rem;
+  flex-grow: 1;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1.5rem;
+  background-color: #383838;
+}
+
+#tool {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+#tool .t {
+  margin: 0px 1.5rem;
+}
+#tool .t:hover {
+  color: greenyellow;
+}
+#profile {
+  min-width: 3rem;
+  min-height: 3rem;
+  width: 6rem;
+  height: 4rem;
+  margin-left: 1rem;
+}
+#profile img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  #profile {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  #tool {
+    display: none;
+  }
+}

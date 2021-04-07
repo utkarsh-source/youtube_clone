@@ -1,0 +1,32 @@
+#cmntbox {
+  width: 100%;
+  display: flex;
+  height: max-content;
+  margin: 2rem 0px;
+}
+#cmntbox img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+#cmnt_details {
+  color: white;
+  margin-left: 1rem;
+}
+#cmnt_details h3 {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+#cmnter {
+  font-size: 1.3rem;
+  color: #bebebe;
+}
+#cmnter span {
+  margin-left: 1rem;
+}

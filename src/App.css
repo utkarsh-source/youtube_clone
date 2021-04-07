@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Ubuntu;
+  scroll-behavior: smooth;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #202020;
+  overflow-y: scroll;
+}
+html {
+  font-size: 62.5%;
+}
+#cont {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  display: grid;
+  grid-template-columns: 7rem auto;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+  #cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (max-width: 400) {
+  html {
+    font-size: 20%;
+  }
+}
+@media screen and (max-width: 300) {
+  html {
+    font-size: 10%;
+  }
+}

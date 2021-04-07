@@ -1,0 +1,81 @@
+#box {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 22rem;
+  opacity: 0;
+  bottom: 0px;
+  z-index: 9999;
+  background-color: #222222;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-top: 1.5rem;
+  overflow: hidden;
+  transform: translateX(-22rem);
+  transition-timing-function: ease-out;
+  transition: 0.2s;
+}
+#box.transition {
+  transform: translateX(0px);
+  opacity: 1;
+}
+#box-wrap {
+  overflow-y: scroll;
+  margin-top: 2rem;
+}
+#box-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+#box-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 2.5rem;
+}
+#box-logo > img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+#box-logo > h2 span {
+  font-size: 2.5rem;
+  color: greenyellow;
+  margin-left: 0.2rem;
+}
+#box-logo > h2 {
+  font-size: 1.6rem;
+}
+hr {
+  border: none;
+  border-top: 0.5px solid #4e4e4eb6;
+}
+#box .features > li,
+#box .subscription > li,
+#box .more > li {
+  list-style: none;
+  margin: 1rem 0px;
+  display: flex;
+  padding: 1rem 0px;
+  align-items: center;
+  width: 100%;
+  color: #dadada;
+  font-size: 1.6rem;
+  transition: 0.2s;
+  padding-left: 2.5rem;
+  cursor: pointer;
+}
+
+#box .icon {
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+#box .bar {
+  color: greenyellow;
+}
+#box li:hover {
+  transform: scale(1.05);
+  background-color: #8b8b8b81;
+  color: greenyellow !important;
+}

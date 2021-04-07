@@ -1,0 +1,59 @@
+#vidbox {
+  position: relative;
+  width: 100%;
+  height: 11rem;
+  display: flex;
+  margin: 1rem 0px;
+}
+#vidbox:hover {
+  cursor: pointer;
+}
+.imageframe {
+  position: relative;
+  flex-shrink: 0;
+  width: 18rem;
+  height: 100%;
+}
+#duration_box {
+  position: absolute;
+  width: 3.2rem;
+  height: 1.8rem;
+  background-color: #000000cb;
+  color: white;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.2rem;
+}
+.imageframe img {
+  width: 100%;
+  height: 100%;
+}
+.frametitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+.frame_channel_title {
+  color: #b4b4b4;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+.frame_views_detail {
+  display: flex;
+  align-items: center;
+  color: #b4b4b4;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+.dot {
+  font-size: 0.4rem;
+}

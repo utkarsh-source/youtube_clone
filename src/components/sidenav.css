@@ -1,0 +1,43 @@
+#nav {
+  width: 7rem;
+  height: 100%;
+  background-color: #222222f8;
+  position: fixed;
+}
+#nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#nav ul li {
+  list-style: none;
+  margin-top: 1rem;
+  width: 100%;
+  height: 7rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+#nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+}
+#nav ul li:hover a {
+  color: greenyellow;
+}
+#nav ul li:hover {
+  background-color: #3b3b3b;
+}
+#nav ul li a > span {
+  display: block;
+  font-size: 1rem;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  #nav {
+    display: none;
+  }
+}
