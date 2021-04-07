@@ -15,33 +15,31 @@ function App() {
   const { accessToken } = useSelector(state => state.auth)
   
   return (
-    <div>
-      <Switch>
+    <>
         {!accessToken ?  <LoginPage/> : 
-          <>
+      <Switch>
             <HoverNav ref={hoverNavRef} hoverNavRef={hoverNavRef} />
-              <Route exact path="/">
+              <Route  path="/" exact>
                   <Header hoverNavRef={hoverNavRef}/>
                   <div id="cont" >
                     <Sidenav />
                   <Recomended/>
                 </div>
               </Route>
-              <Route exact path='/search/:queryParam'>
+              <Route  path='/search/:queryParam' exact>
               <Header hoverNavRef={hoverNavRef}/>
                   <div id="cont" >
                     <Sidenav />
                     <SearchResult/>
                 </div>
               </Route>
-              <Route exact path='/watch/:videoId'>
+              <Route  path='/watch/:videoId' exact>
                 <Header hoverNavRef={hoverNavRef}/>
                   <WatchScreen/>  
                 </Route>
-          </>
+            </Switch>
         }
-        </Switch>
-  </div>
+  </>
     )
 }
 export default App;
