@@ -22,8 +22,8 @@ const Header = ({ hoverNavRef }) => {
     } 
     if (prevQuery != query) {
         setprevQuery(query)
-        dispatch(getSearchVideos('','',true))
         history.push(`/search/${query}`)
+        dispatch(getSearchVideos('','',true))
         }
         
 }   
@@ -37,7 +37,7 @@ const Header = ({ hoverNavRef }) => {
             <div id="search-box">
                 <div className="mainbox">
                     <input ref={inputElem} onKeyDown={(e)=> e.key==="Enter" && submit()} type="text" placeholder='Search' value={query} onChange={(e) => setQuery(e.target.value) }/>
-                    <Link  onClick={submit} to={''} className='linkelem'>
+                    <Link  onClick={submit} to={undefined} className='linkelem'>
                         <FaSearch className="srch" />
                     </Link>
                 </div>

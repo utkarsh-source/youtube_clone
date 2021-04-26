@@ -3,7 +3,6 @@ import './recomended.css'
 import Vcards from './Vcards'
 import {useSelector, useDispatch} from 'react-redux'
 import { getHomeVideos } from '../action/videos_request' 
-import Skeleton from 'react-loading-skeleton';
 
 
 

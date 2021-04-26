@@ -24,9 +24,9 @@ export function login() {
 
 export function logout() {
     return async function (dispatch){
-        await auth.signOut()
         sessionStorage.removeItem('token')
         sessionStorage.removeItem('user')
+        await auth.signOut()
         dispatch({ type: LOGOUT })
     }
 }

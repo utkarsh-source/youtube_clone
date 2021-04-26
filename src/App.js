@@ -7,40 +7,42 @@ import SearchResult from './components/SearchResult'
 import WatchScreen from './components/WatchScreen'
 import React, {useRef} from 'react'
 import LoginPage from './components/LoginPage'
-import { useSelector } from 'react-redux'
-import {Switch, Route, BrowserRouter as Router} from 'react-router-dom'
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   const hoverNavRef = useRef() 
-  const { accessToken } = useSelector(state => state.auth)
   
   return (
     <>
       <Router basename="/youtube_clone">
-        <HoverNav ref={hoverNavRef} hoverNavRef={hoverNavRef} />
-      {!accessToken ? <LoginPage /> :
         <Switch>
-              <Route  path="/" exact>
+              <Route path='/login' exact>
+                  <LoginPage/>
+              </Route>
+              <ProtectedRoute  path="/" exact>
                   <Header hoverNavRef={hoverNavRef}/>
+                    <HoverNav ref={hoverNavRef} hoverNavRef={hoverNavRef} />
                   <div id="cont" >
                     <Sidenav />
                   <Recomended/>
                 </div>
-              </Route>
-              <Route  path='/search/:queryParam' exact>
+              </ProtectedRoute>
+          <ProtectedRoute path='/search/:queryParam' exact>
+              <HoverNav ref={hoverNavRef} hoverNavRef={hoverNavRef} />
               <Header hoverNavRef={hoverNavRef}/>
                   <div id="cont" >
                     <Sidenav />
                     <SearchResult/>
                 </div>
-              </Route>
-              <Route  path='/watch/:videoId' exact>
+              </ProtectedRoute>
+          <ProtectedRoute path='/watch/:videoId' exact>
+                <HoverNav ref={hoverNavRef} hoverNavRef={hoverNavRef} />
                 <Header hoverNavRef={hoverNavRef}/>
                   <WatchScreen/>  
-                </Route>
+              </ProtectedRoute>
         </Switch>
-        }
-        </Router>
+      </Router>
   </>
     )
 }
